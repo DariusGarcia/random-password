@@ -90,6 +90,17 @@ const promptQuestions = () => {
 	upperCaseSelection()
 	specialCharsSelection()
 	numericChars()
+
+	// if statement to make sure user selected at least one option.
+	if (
+		!lowerCaseSelection &&
+		!upperCaseSelection &&
+		!specialCharsSelection &&
+		!numericChars
+	) {
+		alert('Password must include one criteria.')
+		return null
+	}
 }
 
 promptQuestions()
