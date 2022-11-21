@@ -75,10 +75,21 @@ const specialCharsSelection = () => {
 }
 
 const numericChars = () => {
-	confirm('Do you want special characters?')
+	confirm('Do you want numbers included?')
 }
 
 const promptQuestions = () => {
-	// get user input an transform into a number
+	// get user input and transform into a number
 	var inputLength = parseInt(prompt('Enter the length of the password:'))
+
+	// functions to check validity of input length
+	lessThan8(inputLength)
+	moreThan8(inputLength)
+	isNumber(inputLength)
+	lowerCaseSelection()
+	upperCaseSelection()
+	specialCharsSelection()
+	numericChars()
 }
+
+promptQuestions()
