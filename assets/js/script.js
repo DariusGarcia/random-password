@@ -1,41 +1,3 @@
-// strings including the available lowercase letters
-var lowerCasedArray =
-	'a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z'.split('')
-
-// strings including the available uppercase letters
-var upperCasedArray =
-	'A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,R,X,Y,Z'.split('')
-
-// string including the available numbers
-var numbersArray = '0,1,2,3,4,5,6,7,8,9'.split('')
-
-// string including the available special characters
-var specialCharacters = [
-	'@',
-	'%',
-	'+',
-	'\\',
-	'/',
-	"'",
-	'!',
-	'#',
-	'$',
-	'^',
-	'?',
-	':',
-	',',
-	')',
-	'(',
-	'}',
-	'{',
-	']',
-	'[',
-	'~',
-	'-',
-	'_',
-	'.',
-]
-
 // checks in the passed in argument is a valid number or not
 const isNumber = (value) => {
 	if (Number.isNaN(value)) {
@@ -93,14 +55,63 @@ const promptQuestions = () => {
 
 	// if statement to make sure user selected at least one option.
 	if (
-		!lowerCaseSelection &&
-		!upperCaseSelection &&
-		!specialCharsSelection &&
-		!numericChars
+		!lowerCaseSelection == true &&
+		!upperCaseSelection == true &&
+		!specialCharsSelection == true &&
+		!numericChars == true
 	) {
 		alert('Password must include one criteria.')
 		return null
 	}
+
+	// object to store the user password selections
+	var selections = {
+		passwordLength: inputLength,
+		lowercase: lowerCaseSelection,
+		uppercase: upperCaseSelection,
+		specialChars: specialCharsSelection,
+		numbers: numericChars,
+	}
+
+	return selections
 }
 
 promptQuestions()
+
+// strings including the available lowercase letters
+var lowerCasedArray =
+	'a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z'.split('')
+
+// strings including the available uppercase letters
+var upperCasedArray =
+	'A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,R,X,Y,Z'.split('')
+
+// string including the available numbers
+var numbersArray = '0,1,2,3,4,5,6,7,8,9'.split('')
+
+// string including the available special characters
+var specialCharacters = [
+	'@',
+	'%',
+	'+',
+	'\\',
+	'/',
+	"'",
+	'!',
+	'#',
+	'$',
+	'^',
+	'?',
+	':',
+	',',
+	')',
+	'(',
+	'}',
+	'{',
+	']',
+	'[',
+	'~',
+	'-',
+	'_',
+	'.',
+]
