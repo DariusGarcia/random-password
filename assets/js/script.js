@@ -76,6 +76,13 @@ const promptQuestions = () => {
 	return selections
 }
 
+const createPassword = () => {
+	const selection = promptQuestions()
+	const tempPasswordArray = []
+	const includedChars = []
+	const selectedChars = []
+}
+
 promptQuestions()
 
 // strings including the available lowercase letters
