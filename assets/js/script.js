@@ -80,11 +80,37 @@ const createPassword = () => {
 	const selection = promptQuestions()
 	const tempPasswordArray = []
 	const includedChars = []
-	const selectedChars = []
+
+	if (selection[1] === true) {
+		includedChars.concat(lowerCasedArray)
+	}
+	if (selection[2] === true) {
+		includedChars.concat(upperCasedArray)
+	}
+	if (selection[4] === true) {
+		includedChars.concat(numbersArray)
+	}
+	if (selection[3] === true) {
+		includedChars.concat(specialCharacters)
+	}
+
+	for (var i = 0; i < selection[0]; i++) {
+		tempPasswordArray.push(i)
+	}
+
+	tempPasswordArray.join('')
+
+	return tempPasswordArray
 }
 
-promptQuestions()
+function appendPassword() {
+	var temp = createPassword()
+	var passwordText = document.querySelector('#passwordContainer')
+	passwordText.innerHTML = temp
+}
 
+var button = document.querySelector('#generate')
+button.addEventListener('click', appendPassword)
 // strings including the available lowercase letters
 var lowerCasedArray =
 	'a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z'.split('')
