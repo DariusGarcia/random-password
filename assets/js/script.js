@@ -51,3 +51,34 @@ const moreThan8 = (value) => {
 		return null
 	}
 }
+
+// checks if chosen password length is less than the minimum amount, 8.
+const lessThan8 = (value) => {
+	if (value < 8) {
+		alert('Choose a number greater than 7..')
+		return null
+	}
+}
+
+// check if user wants lowercase chars
+const lowerCaseSelection = () => {
+	confirm('Do you want lowercase characters?')
+}
+
+// check if user wants uppercase chars
+const upperCaseSelection = () => {
+	confirm('Do you want uppercase characters?')
+}
+
+const specialCharsSelection = () => {
+	confirm('Do you want special characters?')
+}
+
+const numericChars = () => {
+	confirm('Do you want special characters?')
+}
+
+const promptQuestions = () => {
+	// get user input an transform into a number
+	var inputLength = parseInt(prompt('Enter the length of the password:'))
+}
